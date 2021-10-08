@@ -1,0 +1,129 @@
+exam@debian:~$ mkdir FISAT
+exam@debian:~$ cd FISAT
+exam@debian:~/FISAT$ mkdir Day1
+exam@debian:~/FISAT$ mkdir Day2
+exam@debian:~/FISAT$ mkdir Day3
+exam@debian:~/FISAT$ cd Day1
+exam@debian:~/FISAT/Day1$ cat >f1.txt
+Fisat College
+Angamaly
+exam@debian:~/FISAT/Day1$ cat f1.txt
+Fisat College
+Angamaly
+exam@debian:~/FISAT/Day1$ cat >f2.txt
+Ktu University
+exam@debian:~/FISAT/Day1$ cat >f3.txt
+MCA
+MBA
+BTech
+exam@debian:~/FISAT/Day1$ cat f3.txt
+MCA
+MBA
+BTech
+exam@debian:~/FISAT/Day1$ cd ..
+exam@debian:~/FISAT$ cd Day2
+exam@debian:~/FISAT/Day2$ cat >m1.txt
+mca
+syllubus
+exam@debian:~/FISAT/Day2$ cat >m2.txt
+ds
+dbms
+exam@debian:~/FISAT/Day2$ cd ..
+exam@debian:~/FISAT$ cd Day3
+exam@debian:~/FISAT/Day3$ cat >c1.txt
+python
+oops
+exam@debian:~/FISAT/Day3$ cat >c2.txt
+os
+ob
+exam@debian:~/FISAT/Day3$ cd ..
+exam@debian:~/FISAT$ ls
+Day1  Day2  Day3
+
+
+
+
+
+
+exam@debian:~/FISAT/Day2$ cat m1.txt m2.txt >m3.txt
+exam@debian:~/FISAT/Day2$ cat m3.txt
+mca
+syllubus
+ds
+dbms
+
+
+exam@debian:~/FISAT/Day2$ cd ..
+exam@debian:~/FISAT$ cp -i Day2/m3.txt Day3/c3.txt
+exam@debian:~/FISAT$ cd Day3
+exam@debian:~/FISAT/Day3$ ls
+c1.txt  c2.txt  c3.txt  m3.txt
+exam@debian:~/FISAT/Day3$ cd ..
+exam@debian:~/FISAT$ ls -al
+total 20
+drwxr-xr-x  5 exam exam 4096 Oct  8 09:52 .
+drwxr-xr-x 18 exam exam 4096 Oct  8 09:51 ..
+drwxr-xr-x  2 exam exam 4096 Oct  8 09:54 Day1
+drwxr-xr-x  2 exam exam 4096 Oct  8 10:00 Day2
+drwxr-xr-x  2 exam exam 4096 Oct  8 10:04 Day3
+
+
+exam@debian:~/FISAT$ ls -l
+total 12
+drwxr-xr-x 2 exam exam 4096 Oct  8 09:54 Day1
+drwxr-xr-x 2 exam exam 4096 Oct  8 10:00 Day2
+drwxr-xr-x 2 exam exam 4096 Oct  8 10:04 Day3
+exam@debian:~/FISAT$ ls -la
+total 20
+drwxr-xr-x  5 exam exam 4096 Oct  8 09:52 .
+drwxr-xr-x 18 exam exam 4096 Oct  8 09:51 ..
+drwxr-xr-x  2 exam exam 4096 Oct  8 09:54 Day1
+drwxr-xr-x  2 exam exam 4096 Oct  8 10:00 Day2
+drwxr-xr-x  2 exam exam 4096 Oct  8 10:04 Day3
+
+
+ chmod -rw f1.txt
+exam@debian:~/FISAT/Day1$ ls -l
+total 12
+---------- 1 exam exam 22 Oct  8 09:52 f1.txt
+-rw-r--r-- 1 exam exam 15 Oct  8 09:53 f2.txt
+-rw-r--r-- 1 exam exam 14 Oct  8 09:54 f3.txt
+
+
+exam@debian:~/FISAT/Day1$ ps
+    PID TTY          TIME CMD
+   2408 pts/0    00:00:00 bash
+   3186 pts/0    00:00:00 ps
+
+
+
+
+exam@debian:~/FISAT/Day1$ pwd
+/home/exam/FISAT/Day1
+exam@debian:~/FISAT/Day1$ cd ..
+exam@debian:~/FISAT$ cd ..
+
+SHELL SCRIPT
+
+echo -e "Menu \n 1 Area of circle \n 2 Area of rectangle \n 3 Area of triangle \n 4.Wrong option"
+echo "Enter your choice"
+read ch
+case $ch in
+1) echo "Enter r:"
+   read r
+   ar=` expr 22 \* $r \* $r / 7 `
+   echo "Area of circle is" $ar;; 
+ 2) echo "Enter l:"
+   read l
+   echo "Enter b"
+   read b
+   ar=` expr $l \* $b `
+   echo "Area of rectangle="$ar;;
+3) echo "Enter b:"
+   read b
+   echo "Enter h"
+   read h
+   ar=` expr $b \* $h / 2 `   
+   echo "Area of triangle is="$ar;;
+4) echo "Invalid Choice";;
+   esac
